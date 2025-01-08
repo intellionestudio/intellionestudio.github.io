@@ -70,6 +70,7 @@
         .hero h1 {
             font-size: 64px;
             margin-bottom: 20px;
+            line-height: 1.4;
         }
 
         .hero p {
@@ -372,7 +373,7 @@
         </div>
     </nav>
     <section class="hero">
-        <h1>즐거운 세상을 만드는 게임 스튜디오입니다.</h1>
+        <h1>즐거운 세상을 만드는<br>게임 스튜디오입니다.</h1>
     </section>
     <script>
         // 웹사이트 텍스트 데이터
@@ -382,14 +383,14 @@
                 publishing: '게임',
                 career: '경력',
                 news: '소식',
-                heroTitle: '즐거운 세상을 만드는 게임 스튜디오입니다.'
+                heroTitle: '세상을 즐겁게 만드는<br>게임 스튜디오'
             },
             en: {
                 company: 'Company',
                 publishing: 'Game',
                 career: 'Career',
                 news: 'News',
-                heroTitle: 'A Game Studio Creating a Fun World'
+                heroTitle: 'Making the World Fun<br>Game Studio'
             }
         };
 
@@ -402,8 +403,8 @@
             navLinks[2].textContent = translations[lang].career;
             navLinks[3].textContent = translations[lang].news;
 
-            // 히어로 섹션 텍스트 업데이트
-            document.querySelector('.hero h1').textContent = translations[lang].heroTitle;
+            // 히어로 섹션 텍스트 업데이트 (textContent를 innerHTML로 변경)
+            document.querySelector('.hero h1').innerHTML = translations[lang].heroTitle;
 
             // 현재 선택된 언어 저장
             localStorage.setItem('selectedLanguage', lang);
