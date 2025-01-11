@@ -109,14 +109,17 @@ const footerHTML = `
 
 // 언어 변경 함수
 function changeLanguage(lang) {
-    // 1. 네비게이션 번역
+    // 1. 언어 설정 저장 (리다이렉션 전에 저장)
+    localStorage.setItem('selectedLanguage', lang);
+
+    // 2. 네비게이션 번역
     const navLinks = document.querySelectorAll('.nav-links a');
     navLinks[0].textContent = translations[lang].company;
     navLinks[1].textContent = translations[lang].publishing;
     navLinks[2].textContent = translations[lang].career;
     navLinks[3].textContent = translations[lang].news;
 
-    // 2. 푸터 번역
+    // 3. 푸터 번역
     document.querySelectorAll('[data-lang-key]').forEach(element => {
         const key = element.getAttribute('data-lang-key');
         if (translations[lang][key]) {
@@ -124,19 +127,19 @@ function changeLanguage(lang) {
         }
     });
 
-    // 3. 개인정보처리방침 페이지 확인 및 리다이렉트 처리
+    // 4. 개인정보처리방침 페이지 확인 및 리다이렉트 처리
     const currentPath = window.location.pathname;
     const baseURL = window.location.origin;
 
     if (currentPath.endsWith('privacy_policy_K.html') && lang === 'en') {
         window.location.href = `${baseURL}/privacy_policy_E.html`;
-        return; // 리다이렉션 이후 코드 실행 중단
+        return;
     } else if (currentPath.endsWith('privacy_policy_E.html') && lang === 'ko') {
         window.location.href = `${baseURL}/privacy_policy_K.html`;
         return;
     }
 
-    // 4. 개인정보처리방침 링크 업데이트
+    // 5. 개인정보처리방침 링크 업데이트
     const privacyLink = document.querySelector('.legal-links a[data-lang-key="privacyPolicy"]');
     if (privacyLink) {
         privacyLink.setAttribute(
@@ -145,7 +148,7 @@ function changeLanguage(lang) {
         );
     }
 
-    // 5. 페이지별 번역
+    // 6. 페이지별 번역
     const currentPageKey = currentPath.split('/').pop().replace('.html', '') || 'index';
     if (translations[lang].pages[currentPageKey]) {
         const pageTranslations = translations[lang].pages[currentPageKey];
@@ -167,9 +170,6 @@ function changeLanguage(lang) {
             }
         }
     }
-
-    // 6. 언어 설정 저장
-    localStorage.setItem('selectedLanguage', lang);
 }
 
 
