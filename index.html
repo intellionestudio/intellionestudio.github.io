@@ -3,484 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="common-navbar.css">
+    <link rel="stylesheet" href="common-footer.css">
     <title>IntelliOneStudio</title>
-    <style>
-        /* Reset CSS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            background-color: #000;
-            color: #fff;
-        }
-
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 60px;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #fff;
-            text-decoration: none;
-            line-height: 60px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding-bottom: 200px;  /* 아래쪽 패딩을 추가하여 컨텐츠를 위로 올림 */
-        }
-
-        .hero h1 {
-            font-size: 64px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 24px;
-            opacity: 0.8;
-        }
-
-        .language-selector {
-            position: relative;
-        }
-
-        .language-btn {
-            background: transparent;
-            border: none;
-            color: white;
-            cursor: pointer;
-            padding: 0;
-        }
-
-        .language-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            display: none;
-            overflow: hidden;
-            min-width: 120px;
-        }
-
-        .language-selector:hover .language-dropdown {
-            display: block;
-        }
-
-        .language-option {
-            color: #333;
-            padding: 10px 15px;
-            display: block;
-            text-decoration: none;
-            transition: background 0.2s;
-        }
-
-        .language-option:hover {
-            background: #f5f5f5;
-        }
-
-        /* 반응형 스타일 추가 */
-        @media screen and (max-width: 768px) {
-            .navbar {
-                padding: 15px 20px;
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-
-            .social-links {
-                justify-content: center;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            .games-grid {
-                padding: 0 20px;
-            }
-
-            .game-card {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-
-        /* 더 작은 모바일 화면용 스타일 */
-        @media screen and (max-width: 480px) {
-            .navbar {
-                padding: 10px;
-            }
-
-            .logo {
-                font-size: 20px;
-            }
-
-            .nav-links a {
-                font-size: 14px;
-            }
-
-            .hero h1 {
-                font-size: 24px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-        }
-
-        /* 오른쪽 요소들 컨테이너 */
-        .nav-right {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            gap: 5px;
-        }
-
-        /* 메뉴 토글 버튼 - 기본적으로 숨김 */
-        .menu-toggle {
-            display: none;  /* 기본적으로 숨김 */
-            font-size: 24px;
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-            padding: 0;
-            width: 24px;
-            height: 24px;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* 네비게이션 링크 */
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        @media screen and (max-width: 768px) {
-            .menu-toggle {
-                display: flex;  /* 모바일에서만 보이게 */
-            }
-
-            .nav-links {
-                display: none;  /* 모바일에서 기본적으로 숨김 */
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background-color: rgba(0, 0, 0, 0.9);
-            }
-
-            .nav-links.active {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding: 20px;
-                gap: 20px;
-            }
-        }
-
-        /* 소셜 링크와 메뉴 버튼 컨테이너 스타일 수정 */
-        .nav-right {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            gap: 5px;
-        }
-
-        .social-links {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        @media screen and (max-width: 768px) {
-            .nav-right {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                position: absolute;
-                right: 20px;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-
-            .social-links {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-
-            .menu-toggle {
-                margin-left: 8px;
-            }
-
-            .navbar {
-                padding: 15px 20px;
-                position: relative;
-                justify-content: center;
-            }
-
-            .nav-links {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: rgba(0, 0, 0, 0.9);
-                display: none;
-            }
-
-            .nav-links.active {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding: 20px;
-                gap: 20px;
-            }
-        }
-
-        /* 소셜 링크와 언어 선택기 */
-        .social-link img,
-        .language-btn,
-        .menu-toggle {
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* 오버레이 메뉴 스타일 */
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        @media screen and (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 60px;          /* navbar 높이만큼 아래로 */
-                left: 66%;           /* left: 0 에서 right: 0으로 변경 */
-                width: 33%;         /* 화면의 1/3 */
-                background-color: rgba(0, 0, 0, 0.95);
-                z-index: 999;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 20px;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links a {
-                color: #fff;
-                text-decoration: none;
-                padding: 10px 0;
-                font-size: 16px;
-                width: 100%;
-                text-align: left;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
-            /* 햄버거 메뉴 스타일 */
-            .menu-toggle {
-                z-index: 1001;  /* 오버레이 위에 보이도록 */
-            }
-
-            /* 메뉴가 열렸을 때 햄버거 아이콘을 X로 변경 */
-            .menu-toggle.active {
-                transform: rotate(45deg);
-            }
-        }
-    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="#" class="logo">IntelliOneStudio</a>
-        <div class="nav-links">
-            <a href="#">회사</a>
-            <a href="games.html">게임</a>
-            <a href="#">경력</a>
-            <a href="#">소식</a>
-        </div>
-        <div class="nav-right">
-            <a href="https://www.instagram.com/intellionestudio" target="_blank" class="social-link">
-                <img src="Instagram_logo_2016.svg" alt="Instagram" style="width: 24px; height: 24px;">
-            </a>
-            <div class="language-selector">
-                <button class="language-btn">
-                    <span class="globe-icon">🌐</span>
-                </button>
-                <div class="language-dropdown">
-                    <a href="#" class="language-option" data-lang="ko">한국어</a>
-                    <a href="#" class="language-option" data-lang="en">English</a>
-                </div>
-            </div>
-            <button class="menu-toggle">☰</button>
-        </div>
-    </nav>
     <section class="hero">
         <h1>세상을 즐겁게 하다</h1>
     </section>
+    <!-- 기존 메뉴 토글 스크립트 삭제 대상 -->
+    <!--
     <script>
-        // 웹사이트 텍스트 데이터
-        const translations = {
-            ko: {
-                company: '회사',
-                publishing: '게임',
-                career: '경력',
-                news: '소식',
-                heroTitle: '세상을 즐겁게 하다'
-            },
-            en: {
-                company: 'Company',
-                publishing: 'Game',
-                career: 'Career',
-                news: 'News',
-                heroTitle: 'Make the World Fun'
-            }
-        };
-
-        // 언어 변경 함수
-        function changeLanguage(lang) {
-            // 네비게이션 링크 업데이트
-            const navLinks = document.querySelectorAll('.nav-links a');
-            navLinks[0].textContent = translations[lang].company;
-            navLinks[1].textContent = translations[lang].publishing;
-            navLinks[2].textContent = translations[lang].career;
-            navLinks[3].textContent = translations[lang].news;
-
-            // 히어로 섹션 텍스트 업데이트
-            document.querySelector('.hero h1').textContent = translations[lang].heroTitle;
-
-            // 현재 선택된 언어 저장
-            localStorage.setItem('selectedLanguage', lang);
-        }
-
-        // 언어 선택 드롭다운 스타일
-        const styleSheet = document.createElement('style');
-        styleSheet.textContent = `
-            .language-selector {
-                position: relative;
-            }
-
-            .language-dropdown {
-                display: none;
-                position: absolute;
-                top: 100%;
-                right: 0;
-                background: white;
-                border-radius: 4px;
-                padding: 8px 0;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            }
-
-            .language-dropdown.active {
-                display: block;
-            }
-
-            .language-option {
-                display: block;
-                padding: 8px 16px;
-                color: black;
-                text-decoration: none;
-                white-space: nowrap;
-            }
-
-            .language-option:hover {
-                background-color: #f5f5f5;
-            }
-        `;
-        document.head.appendChild(styleSheet);
-
-        // 언어 선택 버튼 클릭 이벤트
-        document.querySelector('.language-btn').addEventListener('click', function(e) {
-            e.stopPropagation();
-            const dropdown = document.querySelector('.language-dropdown');
-            dropdown.classList.toggle('active');
-        });
-
-        // 언어 옵션 클릭 이벤트
-        document.querySelectorAll('.language-option').forEach(option => {
-            option.addEventListener('click', (e) => {
-                e.preventDefault();
-                const lang = e.target.getAttribute('data-lang');
-                changeLanguage(lang);
-                document.querySelector('.language-dropdown').classList.remove('active');
-            });
-        });
-
-        // 페이지 로드 시 저장된 언어 적용
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLanguage = localStorage.getItem('selectedLanguage') || 'ko';
-            changeLanguage(savedLanguage);
-        });
-
-        // 화면 클릭 시 언어 드롭다운 닫기
-        document.addEventListener('click', () => {
-            document.querySelector('.language-dropdown').classList.remove('active');
-        });
-
-        // 메뉴 토글 버튼 클릭 이벤트
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             const navLinks = document.querySelector('.nav-links');
             const menuToggle = document.querySelector('.menu-toggle');
             
             navLinks.classList.toggle('active');
             
-            // 아이콘 변경
             if (navLinks.classList.contains('active')) {
                 menuToggle.innerHTML = '×';
             } else {
@@ -488,7 +28,6 @@
             }
         });
 
-        // 메뉴 외부 클릭시 닫기
         document.addEventListener('click', function(event) {
             const navLinks = document.querySelector('.nav-links');
             const menuToggle = document.querySelector('.menu-toggle');
@@ -499,20 +38,18 @@
             }
         });
 
-        // 화면 크기 변경 시 이벤트
         window.addEventListener('resize', function() {
             const menuToggle = document.querySelector('.menu-toggle');
             const navLinks = document.querySelector('.nav-links');
 
             if (window.innerWidth > 768) {
                 navLinks.classList.remove('active');
-                menuToggle.style.display = 'none';  // 햄버거 아이콘 숨김
+                menuToggle.style.display = 'none';
             } else {
-                menuToggle.style.display = 'flex';  // 햄버거 아이콘 보이기
+                menuToggle.style.display = 'flex';
             }
         });
 
-        // 초기 로드 시 화면 크기에 따라 햄버거 아이콘 설정
         window.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
             if (window.innerWidth > 768) {
@@ -522,7 +59,6 @@
             }
         });
 
-        // 메뉴 항목 클릭시 메뉴 닫기
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 const navLinks = document.querySelector('.nav-links');
@@ -535,13 +71,17 @@
             });
         });
 
-        // 화면 클릭시 메뉴 닫기
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.navbar')) {
                 document.querySelector('.nav-links').classList.remove('active');
             }
         });
     </script>
-    
+    -->
+    <!-- <script src="menu-toggle.js"></script>
+    <script>
+        setupMenuToggle();
+    </script> -->
+    <script src="common.js"></script>
 </body>
-</html> 
+</html>
