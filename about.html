@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회사 소개 - IntelliOne Studio</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="common-footer.css">
+<style>
+    /* 회사 소개 페이지 스타일 */
+    .hero-slider {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 10px;
+        padding: 20px;
+        background-color: #f4f4f4;
+        justify-content: center;
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+
+    /* .hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 0px;
+} */
+
+/* .games-hero {
+    position: relative;
+    padding-top: 75px;
+    text-align: center;
+    background: linear-gradient(to bottom right, #6a11cb, #2575fc);
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+} */
+
+    .hero-slider img {
+        width: 100%;
+        max-width: 440px;
+        height: auto;
+        border-radius: 10px;
+        scroll-snap-align: center;
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+        
+    }
+
+    .story-timeline {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        padding: 40px 20px;
+        background-color: #fff;
+    }
+
+    .story-timeline .our-story {
+        margin-top: 20px;
+        text-align: left;
+        padding-right: 20px;
+        border-right: 2px solid #e0e0e0;
+    }
+
+    .story-timeline .our-story h2 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #222;
+    }
+
+    .story-timeline .our-story p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        color: #555;
+        margin-bottom: 110px;
+    }
+
+    .story-timeline .timeline {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .story-timeline .timeline-item {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .story-timeline .timeline-item h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0;
+        color: #007BFF;
+    }
+
+    .story-timeline .timeline-item p {
+        font-size: 16px;
+        line-height: 1.8;
+        margin: 0;
+        color: #333;
+    }
+
+    @media (max-width: 768px) {
+        .story-timeline {
+            grid-template-columns: 1fr;
+        }
+
+        .story-timeline .our-story {
+            border-right: none;
+            border-bottom: 2px solid #e0e0e0;
+            padding-right: 0;
+            margin-bottom: 20px;
+        }
+        .hero-slider {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 10px;
+        padding: 20px;
+        background-color: #f4f4f4;
+        justify-content: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <!-- 헤더는 common.js에서 추가됩니다 -->
+    </header>
+
+    <main>
+        <!-- 슬라이더 섹션 -->
+        <section class="hero-slider">
+            <img src="a4.jpg" alt="Team working together">
+            <img src="a5.jpg" alt="IntelliOne Studio office">
+            <img src="a3.jpg" alt="Team collaboration">
+        </section>
+
+        <!-- 회사 소개 및 타임라인 섹션 -->
+        <section class="story-timeline">
+            <div class="our-story">
+                <h2>Our Story</h2>
+                <p>2024년에 설립된 IntelliOne Studio는 세상을 더욱 즐겁게 만드는 하이퍼캐주얼 게임 개발에 전념하고 있습니다. 혁신에 대한 강한 열정을 바탕으로, 우리는 글로벌 시장 동향과 AI 코딩 기술을 결합하여 매력적인 경험을 제공합니다.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>2024 - 설립</h3>
+                    <p>IntelliOne Studio는 "세상을 더욱 즐겁게"라는 비전을 가지고 설립되었습니다. 대표작으로는 기억력 기반 퍼즐 게임 "외워라! 창고" 와 머지 게임 "농부의 꿈" 이 있으며, 두 게임 모두 iOS 및 Android 플랫폼에서 무료로 출시되었습니다.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2025 - 글로벌 성장</h3>
+                    <p>"새로운 하이퍼캐주얼 게임"을 출시하며 글로벌 유저들에게 사랑받는 스튜디오로 성장할 계획입니다.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- 푸터는 common.js에서 추가됩니다 -->
+    </footer>
+
+    <script src="common.js"></script>
+</body>
+</html>

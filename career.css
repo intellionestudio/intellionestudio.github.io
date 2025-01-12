@@ -1,0 +1,153 @@
+.career-hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.career-hero h1 {
+    font-size: 36px;
+    color: #222;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.career-hero p {
+    font-size: 18px;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.team-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 30px;
+    justify-items: center;
+}
+
+.team-card {
+    position: relative;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.team-card a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-indent: -9999px;
+    z-index: 2;
+}
+
+/* .team-card {
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+} */
+
+.team-card img {
+    width: 100%;
+    height: auto;
+}
+
+.team-card h2 {
+    font-size: 20px;
+    color: #007BFF;
+    padding: 10px;
+}
+
+/* .team-card:hover {
+    transform: scale(1.05);
+} */
+
+.hiring-process {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.hiring-process h2 {
+    font-size: 36px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.hiring-process p {
+    font-size: 18px;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.hiring-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+.step {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.step-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.step h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.step-offer {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007BFF;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .career-hero h1 {
+        font-size: 36px;
+        margin-top: unset; /* margin-top 제거 */
+        margin-bottom: unset; /* margin-bottom 제거 */
+        color: #222;
+    }
+    .hiring-steps {
+        grid-template-columns: 1fr;
+    }
+}

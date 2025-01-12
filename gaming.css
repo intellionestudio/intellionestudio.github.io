@@ -1,0 +1,108 @@
+/* 기본 스타일 */
+.gaming-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+
+}
+
+.gaming-hero .hero-content {
+    max-width: 50%;
+}
+
+.gaming-hero h1 {
+    font-size: 36px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.gaming-hero p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.gaming-hero .hero-image img {
+    margin-top: 50px; /* padding 대신 margin 사용 */
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px; /* 라운드 효과 */
+    display: block; /* 추가: inline 요소가 아닌 block 요소로 설정 */
+    overflow: hidden; /* 추가: 라운드가 적용되도록 부모 요소에도 적용 가능 */
+}
+
+.why-join {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.why-join h2 {
+    font-size: 36px;
+    color: #222;
+    margin-bottom: 50px;
+}
+
+.join-reasons {
+    display: flex;
+    justify-content: center; /* 가운데 정렬 */
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.reason {
+    flex: 1; /* 각 .reason의 너비를 동일하게 설정 */
+    text-align: left; /* 텍스트 중앙 정렬 */
+}
+
+.reason p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin: 0 auto; /* 가운데 정렬을 위한 margin */
+    width: 100%; /* p 태그의 고정 너비 설정 */
+}
+
+
+/* 768px 이하 반응형 스타일 */
+@media (max-width: 768px) {
+    .gaming-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gaming-hero .hero-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .gaming-hero h1 {
+        font-size: 28px;
+    }
+
+    .gaming-hero p {
+        font-size: 16px;
+    }
+
+    .gaming-hero .hero-image img {
+        max-width: 400px;
+    }
+
+    .why-join h2 {
+        font-size: 28px;
+    }
+
+    .join-reasons {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .reason p {
+        font-size: 16px;
+        text-align: center;
+    }
+}
