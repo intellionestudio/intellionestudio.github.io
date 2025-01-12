@@ -16,6 +16,8 @@
     color: #555;
     max-width: 800px;
     margin: 0 auto;
+    line-height: 1.6;
+
 }
 
 .team-cards {
@@ -70,6 +72,7 @@
     font-size: 20px;
     color: #007BFF;
     padding: 10px;
+    
 }
 
 /* .team-card:hover {
@@ -93,6 +96,8 @@
     color: #555;
     max-width: 800px;
     margin: 0 auto 40px;
+    line-height: 1.6;
+
 }
 
 .hiring-steps {
