@@ -150,6 +150,7 @@ const translations = {
 };
 
 
+
 // 헤더 HTML
 const headerHTML = `
 <nav class="navbar">
