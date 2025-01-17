@@ -13,7 +13,7 @@ const translations = {
         businessNumber: '사업자번호: 359-02-03179',
         email: 'EMAIL: intellioneofficial@naver.com',
         privacyPolicy: '개인정보처리방침',
-        copyright: 'Copyright © 2024 IntelliOneStudio All rights reserved.',
+        copyright: 'Copyright © 2025 IntelliOneStudio All rights reserved.',
 
         // 페이지별 번역
         pages: {
@@ -86,7 +86,7 @@ const translations = {
         businessNumber: 'Business No.: 359-02-03179',
         email: 'EMAIL: intellioneofficial@naver.com',
         privacyPolicy: 'Privacy Policy',
-        copyright: 'Copyright © 2024 IntelliOneStudio All rights reserved.',
+        copyright: 'Copyright © 2025 IntelliOneStudio All rights reserved.',
 
         // 페이지별 번역
         pages: {
