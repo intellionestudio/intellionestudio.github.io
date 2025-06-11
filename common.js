@@ -21,10 +21,12 @@ const translations = {
                 heroTitle: '세상을 즐겁게 하다'
             },
             games: {
-                heroTitle1: '인텔리원스튜디오가 개발한',
-                heroTitle2: '다양한 게임을 만나보세요',
-                gameTitle1: '외워라 창고',
-                gameTitle2: '농부의 꿈'
+                heroTitle1: "인텔리원스튜디오가 개발한",
+                heroTitle2: "다양한 게임을 만나보세요",
+                gameTitle1: "Ghost Lights Puzzle",
+                gameTitle2: "Exit Queue",
+                gameTitle3: "외워라 창고",
+                gameTitle4: "농부의 꿈"
             },
             about: {
                 storyHeading: '우리의 이야기',
