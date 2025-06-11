@@ -96,8 +96,10 @@ const translations = {
             games: {
                 heroTitle1: 'Games Developed by IntelliOne Studio',
                 heroTitle2: 'Discover Our Various Games',
-                gameTitle1: 'Memory Warehouse',
-                gameTitle2: 'Farmers Dream'
+                gameTitle1: 'Ghost Lights Puzzle',
+                gameTitle2: 'Exit queue',
+                gameTitle3: 'Memory Warehouse',
+                gameTitle4: 'Farmers Dream'
             },
             about: {
                 storyHeading: 'Our Story',
