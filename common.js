@@ -325,9 +325,11 @@ function changeLanguage(lang) {
                 heroTitles[1].textContent = pageTranslations.heroTitle2;
             }
             const gameTitles = document.querySelectorAll('.game-title');
-            if (gameTitles.length >= 2) {
+            if (gameTitles.length >= 4) {
                 gameTitles[0].textContent = pageTranslations.gameTitle1;
                 gameTitles[1].textContent = pageTranslations.gameTitle2;
+                gameTitles[2].textContent = pageTranslations.gameTitle3;
+                gameTitles[3].textContent = pageTranslations.gameTitle4;
             }
         }
     }
